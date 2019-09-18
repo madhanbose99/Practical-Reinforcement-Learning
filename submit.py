@@ -6,16 +6,15 @@ import grading
 
 def submit_cartpole(generate_session, email, token):
     sessions = [generate_session() for _ in range(100)]
-    #session_rewards, _, _ = map(np.array, zip(*sessions))
     session_rewards = np.array(sessions)
-    grader = grading.Grader("RDofv-QXEeeaGw6kpIOf3g")
-    grader.set_answer("NRNkl", int(np.mean(session_rewards)))
+    grader = grading.Grader("oyT3Bt7yEeeQvhJmhysb5g")
+    grader.set_answer("7QKmA", int(np.mean(session_rewards)))
     grader.submit(email, token)
 
 
-def submit_breakout(agent, env, evaluate, email, token):
-    sessions = [evaluate(env, agent, n_games=1) for _ in range(100)]
+def submit_kungfu(agent, env, evaluate, email, token):
+    sessions = [evaluate(agent=agent, env=env, n_games=1) for _ in range(100)]
     session_rewards = np.array(sessions)
-    grader = grading.Grader("WTOZHCn1EeiNwAoZNi-Hrg")
-    grader.set_answer("VFM7Z", int(np.mean(session_rewards)))
+    grader = grading.Grader("6sPnVCn6EeieSRL7rCBNJA")
+    grader.set_answer("HhNVX", 100*int(np.mean(session_rewards)))
     grader.submit(email, token)
